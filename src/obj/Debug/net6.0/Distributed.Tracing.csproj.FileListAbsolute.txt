@@ -1,0 +1,12 @@
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\Distributed.Tracing.csproj.AssemblyReference.cache
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\Distributed.Tracing.GeneratedMSBuildEditorConfig.editorconfig
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\Distributed.Tracing.AssemblyInfoInputs.cache
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\Distributed.Tracing.AssemblyInfo.cs
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\Distributed.Tracing.csproj.CoreCompileInputs.cache
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\bin\Debug\net6.0\Distributed.Tracing.deps.json
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\bin\Debug\net6.0\Distributed.Tracing.dll
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\bin\Debug\net6.0\Distributed.Tracing.pdb
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\Distributed.Tracing.dll
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\refint\Distributed.Tracing.dll
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\Distributed.Tracing.pdb
+D:\programing\gitlab\MUNS.Back\MUNS.Building.Blocks\Distributed.Tracing\src\obj\Debug\net6.0\ref\Distributed.Tracing.dll
