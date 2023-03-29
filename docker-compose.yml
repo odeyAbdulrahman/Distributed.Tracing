@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  openzipkin:
+    image: openzipkin/zipkin
+
+  service1:
+    image: ${DOCKER_REGISTRY-}service1
+    build:
+      context: .
+      dockerfile: src/Service1/Dockerfile
+
+  service2:
+    image: ${DOCKER_REGISTRY-}service2
+    build:
+      context: .
+      dockerfile: src/Service2/Dockerfile
+
