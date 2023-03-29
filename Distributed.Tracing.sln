@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Distributed.Tracing", "src\Distributed.Tracing.csproj", "{6974069C-5121-421E-9663-B319CFBAC3D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Distributed.Tracing", "src\Distributed.Tracing\Distributed.Tracing.csproj", "{BE0E05A4-7CFA-47EC-B2F9-1BD3939019BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service1", "src\Service1\Service1.csproj", "{6A2E0068-4087-4C0F-8898-096FF4754588}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service2", "src\Service2\Service2.csproj", "{74825EA3-550C-432B-8424-C97A64B5787D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{28AA9D34-EB91-4BF2-BFE2-0A58DB2F4D6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{01A97344-6927-4CFE-B4E2-706584718424}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +23,28 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6974069C-5121-421E-9663-B319CFBAC3D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6974069C-5121-421E-9663-B319CFBAC3D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6974069C-5121-421E-9663-B319CFBAC3D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6974069C-5121-421E-9663-B319CFBAC3D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE0E05A4-7CFA-47EC-B2F9-1BD3939019BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0E05A4-7CFA-47EC-B2F9-1BD3939019BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0E05A4-7CFA-47EC-B2F9-1BD3939019BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE0E05A4-7CFA-47EC-B2F9-1BD3939019BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A2E0068-4087-4C0F-8898-096FF4754588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A2E0068-4087-4C0F-8898-096FF4754588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A2E0068-4087-4C0F-8898-096FF4754588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A2E0068-4087-4C0F-8898-096FF4754588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74825EA3-550C-432B-8424-C97A64B5787D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74825EA3-550C-432B-8424-C97A64B5787D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74825EA3-550C-432B-8424-C97A64B5787D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74825EA3-550C-432B-8424-C97A64B5787D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28AA9D34-EB91-4BF2-BFE2-0A58DB2F4D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28AA9D34-EB91-4BF2-BFE2-0A58DB2F4D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28AA9D34-EB91-4BF2-BFE2-0A58DB2F4D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28AA9D34-EB91-4BF2-BFE2-0A58DB2F4D6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28AA9D34-EB91-4BF2-BFE2-0A58DB2F4D6C} = {01A97344-6927-4CFE-B4E2-706584718424}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5150AAB7-D0C6-47F3-B01A-1AC83A2CF320}
