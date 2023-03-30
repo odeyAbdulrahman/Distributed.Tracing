@@ -27,8 +27,6 @@ public static class DistributedTracingExtension
             .AddService(serviceName: OpenTelemetry.ServiceName, serviceVersion: OpenTelemetry.ServiceVersion))
             .AddHttpClientInstrumentation()
             .AddAspNetCoreInstrumentation()
-            .AddSqlClientInstrumentation()
-            .AddEntityFrameworkCoreInstrumentation(options => options.SetDbStatementForText = true)
             .AddZipkinExporter(options =>
             {
                 options.Endpoint = new Uri(ZipkinUrl);
