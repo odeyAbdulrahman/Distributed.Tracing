@@ -2,8 +2,8 @@
 
   <PropertyGroup>
 	  <TargetFramework>net6.0</TargetFramework>
-	  <PackageId>Dmaal.Distributed.Tracing</PackageId>
-	  <Authors>Dmmal</Authors>
+	  <PackageId>Distributed.Tracing</PackageId>
+	  <Authors>odey abdalrahman</Authors>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
 	  <Version>1.4.36</Version>
@@ -18,8 +18,5 @@
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc9.8" />
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc9.8" />
 	<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc9.8" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.0.0-rc9.8" /> 
-	<PackageReference Include="OpenTelemetry.Contrib.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta2" />
-    <PackageReference Include="OpenTelemetry.Contrib.Instrumentation.MassTransit" Version="1.0.0-beta2" />
   </ItemGroup>
 </Project>
