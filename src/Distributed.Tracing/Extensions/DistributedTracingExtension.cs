@@ -25,8 +25,31 @@ public static class DistributedTracingExtension
             .AddSource(OpenTelemetry.ServiceName)
             .SetResourceBuilder(ResourceBuilder.CreateDefault()
             .AddService(serviceName: OpenTelemetry.ServiceName, serviceVersion: OpenTelemetry.ServiceVersion))
-            .AddHttpClientInstrumentation()
-            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation(options =>
+                options.Enrich = (Activity, eventName, rowObject) =>
+                {
+                    if (eventName == "OnStartActivity" && rowObject is HttpRequestMessage request)
+                    {
+                        if (request.Method == HttpMethod.Get)
+                            Activity.SetTag("GetRequest", "get-request");
+                        if (request.Method == HttpMethod.Post)
+                            Activity.SetTag("PostRequest", "post-request");
+                        if (request.Method == HttpMethod.Put)
+                            Activity.SetTag("PutRequest", "put-request");
+                        if (request.Method == HttpMethod.Delete)
+                            Activity.SetTag("DeleteRequest", "delete-request");
+                    }
+                })
+            .AddAspNetCoreInstrumentation(options =>
+            {
+                options.Filter = httpContext =>
+                    !httpContext.Request.Path.Value.StartsWith("/swagger") &&
+                    !httpContext.Request.Path.Value.StartsWith("/_framework") &&
+                    !httpContext.Request.Path.Value.StartsWith("/_search") &&
+                    !httpContext.Request.Path.Value.StartsWith("/_vs");
+            }
+             )
+            .AddConsoleExporter()
             .AddZipkinExporter(options =>
             {
                 options.Endpoint = new Uri(ZipkinUrl);

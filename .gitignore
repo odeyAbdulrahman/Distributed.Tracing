@@ -29,6 +29,7 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
 /.vs
 \.vs
 /src/.vs/
