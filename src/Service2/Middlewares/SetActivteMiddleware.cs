@@ -1,28 +1,32 @@
-﻿using Distributed.Tracing.Extensions;
-using Microsoft.AspNetCore.Http;
+﻿using Distributed.Tracing.Services;
 using OpenTelemetry.Trace;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Distributed.Tracing.Middlewares
 {
     internal class SetActivteMiddleware
     {
+        private readonly IServiceProvider ServiceProvider;
         private readonly RequestDelegate Next;
 
-        public SetActivteMiddleware(RequestDelegate next)
+        public SetActivteMiddleware(RequestDelegate next, IServiceProvider serviceProvider)
         {
             Next = next;
+            ServiceProvider = serviceProvider;
         }
 
         public async Task Invoke(HttpContext context, Tracer tracer)
         {
-            using var parent = tracer.StartActiveSpan($"Middleware Service 2 is started !!");
+            using var scope = ServiceProvider.CreateScope();
+            var scopedCounter = scope.ServiceProvider.GetRequiredService<ICounter>();
+
+            var count = await scopedCounter.GetCounter();
+            if (count > 3)
+                count = await scopedCounter.SetCounter();
+
+            using var started = tracer.StartActiveSpan($"Middleware Service 2 is started !!");
+            started.SetAttribute("count.value", count);
             await Next(context);
-            using var child1 = tracer.StartActiveSpan("Middleware Service 2 is stopped !!");
+            using var stopped = tracer.StartActiveSpan("Middleware Service 2 is stopped !!");
         }
     }
 }

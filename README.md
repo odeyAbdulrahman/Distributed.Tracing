@@ -1,7 +1,7 @@
 ﻿# Distributed.Tracing with Opentelemetry and Openzipkin
 
 ![Logo](https://i.postimg.cc/L5LxVjkV/distributed-tracing-icon.png)
-https://i.postimg.cc/HnjY8YqZ/Screenshot-2.png
+
 Distributed tracing is a method for tracking requests as they flow through a complex system made up of multiple servers and services. It enables developers to understand the behavior of their distributed systems by providing visibility into the path of a request as it traverses different components of the system.
 
 ## How to use:
@@ -37,8 +37,10 @@ app.Run();
   },
 }
 ```
+## Result in zipkin:
 
 ![Logo](https://i.postimg.cc/zfj8dH52/Screenshot-1.png)
 
+## Result in  zipkin / dependency
 ![Logo](https://i.postimg.cc/HnjY8YqZ/Screenshot-2.png)
 
