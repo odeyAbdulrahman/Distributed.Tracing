@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using System.Net;
 using System.Text.Json;
 
@@ -22,6 +23,13 @@ namespace WebApp.Controllers
         {
             var result = JsonSerializer.Deserialize<object>(await SendAsync("Service2", "/api/Activity/Start"));
             return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("Status")]
+        public async Task<IActionResult> GetStatusAsync()
+        {
+            return Ok(new { status = HttpStatusCode.OK, success = "Is Active" });
         }
 
         #region HttpClient Factory
