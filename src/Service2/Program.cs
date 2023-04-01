@@ -1,8 +1,6 @@
-using Distributed.Tracing;
 using Distributed.Tracing.Extensions;
 using Distributed.Tracing.Middlewares;
 using Microsoft.Net.Http.Headers;
-using OpenTelemetry.Trace;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,13 +16,9 @@ builder.Services.AddHttpClient("Service1", client =>
     client.BaseAddress = new Uri("https://localhost:7132"); //api url
     client.DefaultRequestHeaders.Clear();
     client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-
 });
-
-var OpenTelemetry = builder.Configuration.GetSection("OpenTelemetryConfig").Get<OpenTelemetryViewModel>();
-
 builder.Services.AddDistributedTracingServies(builder.Configuration);
-builder.Services.AddSingleton(TracerProvider.Default.GetTracer(OpenTelemetry.ServiceName));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

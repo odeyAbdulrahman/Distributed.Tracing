@@ -1,4 +1,5 @@
 ﻿
+using Distributed.Tracing.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OpenTelemetry.Exporter;
@@ -12,9 +13,16 @@ public static class DistributedTracingExtension
     public static void AddDistributedTracingServies(this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<OpenTelemetryViewModel>(configuration.GetSection("OpenTelemetryConfig"));
-
-        var OpenTelemetry = configuration.GetSection("OpenTelemetryConfig").Get<OpenTelemetryViewModel>();
         var ZipkinUrl = configuration.GetSection("ZipkinConfig")["ZipkinAddress"];
+        var OpenTelemetry = configuration.GetSection("OpenTelemetryConfig").Get<OpenTelemetryViewModel>();
+
+        services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = $"localhost:6379,password=12345,ssl=false,abortConnect=false";
+        });
+        services.AddSingleton(TracerProvider.Default.GetTracer(OpenTelemetry.ServiceName));
+        services.AddScoped<ICounter, CounterService>();
+
         services.AddOpenTelemetryTracing(tracerProviderBuilder =>
         {
             _ = tracerProviderBuilder
